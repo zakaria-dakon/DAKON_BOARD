@@ -12,16 +12,18 @@ let characteristic;
 
 
 const scene = new THREE.Scene();
+scene.background = new THREE.Color(0xEADBC8); //
 const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
 
 const renderer = new THREE.WebGLRenderer();
-renderer.setSize( window.innerWidth, window.innerHeight );
+renderer.setSize( window.innerWidth, window.innerHeight);
+// console.log(renderer.getContext());
 document.body.appendChild( renderer.domElement );
-
+//groundplane
 
 //adding light 
-const directionalLight = new THREE.DirectionalLight( 0xffffff, 0.5 );
-directionalLight.position.set( 5, 5, 5 );
+const directionalLight = new THREE.DirectionalLight( 0xffffff, 0.7 );
+directionalLight.position.set( 20, 20, 20 );
 scene.add( directionalLight );
 const spotLight = new THREE.SpotLight( 0xff0000 );
 spotLight.position.set( 1000, 1000, 1000 );
@@ -126,7 +128,10 @@ connectButton.addEventListener('click', connect);
 function animate() {
 	requestAnimationFrame( animate );
   model_3d.rotation.y+=0.01;
-  directionalLight.animations;
+  // model_3d.rotation.z+=0.01;
+  model_3d.rotation.x+=0.01;
+
+  // directionalLight.animations;
 
 
 
